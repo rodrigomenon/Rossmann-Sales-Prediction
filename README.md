@@ -131,7 +131,7 @@ As an example, we can cite store 5, which has a forecast value of sales for the 
 |	4 |	349071.562500 |	348204.317436 |	349938.807564 |	867.245064 |	0.083969 |
 |	5 |	172722.390625 |	172373.571388 |	173071.209862 |	348.819237 |	0.080151 |
 
-### Análise Gráfica da Performance do Modelo
+### Graphical Analysis of Model Performance
 
 To help understand the performance of the model, we generate the graph below. In it, it is possible to verify that the sales brands follow the actual sales very closely (plot 1). Regarding the error rate (plot 2), we can see where the model is overestimating the sales value (above the dotted line), or underestimating the sales value (below the dotted line).
 Next, we have the error distribution, which approximates the normal (Gaussian) distribution, indicating that the error is symmetrically distributed around the mean (plot 3). Finally, we verified the low dispersion of the model's error (plot 4).
