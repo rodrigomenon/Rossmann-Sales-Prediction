@@ -20,7 +20,33 @@ Therefore, this project aims to solve the following business issue:
 - what is the expected sales value for each store in the next 6 weeks?
 
 
-## 2. Assumptions
+## 2. Data
+
+### 2.1 Data Aquisition
+
+The data used in this project was extracted from [Kaggle](https://www.kaggle.com/c/rossmann-store-sales/data) 
+
+### 2.2 Data Understanding
+
+Most of the fields are self-explanatory. The following are descriptions for those that aren't.
+
+- Id - an Id that represents a (Store, Date) duple within the test set
+- Store - a unique Id for each store
+- Sales - the turnover for any given day (this is what you are predicting)
+- Customers - the number of customers on a given day
+- Open - an indicator for whether the store was open: 0 = closed, 1 = open
+- StateHoliday - indicates a state holiday. Normally all stores, with few exceptions, are closed on state holidays. Note that all schools are closed on public holidays and weekends. a = public holiday, b = Easter holiday, c = Christmas, 0 = None
+- SchoolHoliday - indicates if the (Store, Date) was affected by the closure of public schools
+- StoreType - differentiates between 4 different store models: a, b, c, d
+- Assortment - describes an assortment level: a = basic, b = extra, c = extended
+- CompetitionDistance - distance in meters to the nearest competitor store
+- CompetitionOpenSince[Month/Year] - gives the approximate year and month of the time the nearest competitor was opened
+- Promo - indicates whether a store is running a promo on that day
+- Promo2 - Promo2 is a continuing and consecutive promotion for some stores: 0 = store is not participating, 1 = store is participating
+- Promo2Since[Year/Week] - describes the year and calendar week when the store started participating in Promo2
+- PromoInterval - describes the consecutive intervals Promo2 is started, naming the months the promotion is started anew. E.g. "Feb,May,Aug,Nov" means each round starts in February, May, August, November of any given year for that store
+
+## 3. Assumptions
 
 | Variable | Assumption          | 
 | :-----: | :-----------------------------------: | 
@@ -28,12 +54,12 @@ Therefore, this project aims to solve the following business issue:
 | **competition_distance** | to replace the NAN values in this variable, we consider entering the value 200000, which is much larger than the variable's maximum value (75800), which would mean no close competitors |
 
 
-## 3. Solution Planning
+## 4. Solution Planning
 
-### 3.1 Final Product
+### 4.1 Final Product
 The final product will be an API that provides the sales forecast for each store in the dataset within 6 weeks and will be accessible from the Telegram app
 
-### 3.2 Tools
+### 4.2 Tools
 The tools used on this project were:
 
 
@@ -46,10 +72,10 @@ The tools used on this project were:
 | Bot for forecasts consults  | Telegram |
 
 
-### 3.3 Process
+### 4.3 Process
 The project steps were based on **CRISP-DM** metodology
 
-- 1- **Data Collection**: The data used in this project was extracted from [Kaggle](https://www.kaggle.com/c/rossmann-store-sales/data) 
+- 1- **Data Collection**: Download the dataset from [Kaggle](https://www.kaggle.com/c/rossmann-store-sales/data) 
 
 - 2- **Data Description**: Measures of central tendency and dispertion were used to better understand the data
 
@@ -74,7 +100,7 @@ The project steps were based on **CRISP-DM** metodology
 
 - 11- **Deploy Model to Production**: Deploy the model in a production environment to make forecasts accessible to the business team, enabling quick practical data-driven business decision making.
 
-## 4. Business Hypothesis Validation
+## 5. Business Hypothesis Validation
 |         | Hypothesis          | Validation | Variable's relevance to Model |
 | :-----: | :------------------ | :-----:     | :-----:             |
 | **H1**  | Stores with a larger assortment should sell more | False | Low |
@@ -92,7 +118,7 @@ The project steps were based on **CRISP-DM** metodology
 * although the dataset does not contain the full year 2015 data
 
 
-## 5. Models Performance Comparation
+## 6. Models Performance Comparation
 
 The table below shows the comparation between the models performance after the cross validation technique.
 
@@ -108,7 +134,7 @@ Since the platform used for the deployment (Heroku) is free, it has space limita
 Another reason is that we expect that the model's performance increase after Hyperparameter Fine Tuning step.
 
 
-## 6. Final Model Performance
+## 7. Final Model Performance
 
 As we expected, the model performance increased
 
@@ -117,7 +143,7 @@ As we expected, the model performance increased
 | XGBoost Regressor |	665.330873 |	0.097987 |	958.715745 |
 
 
-## 7. Business Performance and Interpretation Error
+## 8. Business Performance and Interpretation Error
 
 The table below shows the sales forecast for some stores. The MAE indicates the average error of the model, in which we can predict the best-case and worst-case sales scenario. Along with this information, we have the MAPE that indicates the mean absolute of the error in percentage.
 
@@ -131,7 +157,7 @@ As an example, we can cite store 5, which has a forecast value of sales for the 
 |	4 |	349071.562500 |	348204.317436 |	349938.807564 |	867.245064 |	0.083969 |
 |	5 |	172722.390625 |	172373.571388 |	173071.209862 |	348.819237 |	0.080151 |
 
-### 7.1 Graphical Analysis of Model Performance
+### 8.1 Graphical Analysis of Model Performance
 
 To help understand the performance of the model, we generate the graph below. In it, it is possible to verify that the sales brands follow the actual sales very closely (plot 1). Regarding the error rate (plot 2), we can see where the model is overestimating the sales value (above the dotted line), or underestimating the sales value (below the dotted line).
 Next, we have the error distribution, which approximates the normal (Gaussian) distribution, indicating that the error is symmetrically distributed around the mean (plot 3). Finally, we verified the low dispersion of the model's error (plot 4).
@@ -140,7 +166,7 @@ Next, we have the error distribution, which approximates the normal (Gaussian) d
 
 
 
-## 8. Financial Results
+## 9. Business Results
 
 Finally, we can calculate the sum of all predictions made by the model, identifying the best and worst scenarios for the next 6 weeks of sale.
 
@@ -151,7 +177,7 @@ Finally, we can calculate the sum of all predictions made by the model, identify
 |	best_scenario |	$ 287,668,215.25 |
 
 
-## 9. Final product
+## 10. Final product
 
 As planned, the final product is an API for forecasting sales for the next 6 weeks, which can be accessed through the Telegram app.
 Below we have an image that illustrates the usage example of this application.
@@ -160,10 +186,10 @@ Below we have an image that illustrates the usage example of this application.
 ![image3](/img/telegram.jpeg)
 
 
-## 10. Conclusion
+## 11. Conclusion
 We can conclude that the demand was met with the delivery of a solution that can be accessed anywhere, through the Telegram application that addresses the business problem raised by the CEO of the Rossmann company.
 
-## 11. Next Steps
+## 12. Next Steps
 The next steps will be:
 - identification of improvements in model performance, either by adding new data or by adding new features to the model;
 - feedback from the business team on the usability of the application;
