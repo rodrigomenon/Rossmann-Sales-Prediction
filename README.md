@@ -74,7 +74,7 @@ The project steps were based on **CRISP-DM** metodology
 
 - 11- **Deploy Model to Production**: Deploy the model in a production environment to make forecasts accessible to the business team, enabling quick practical data-driven business decision making.
 
-## Business Hypothesis Validation
+## 4. Business Hypothesis Validation
 |         | Hypothesis          | Validation | Variable's relevance to Model |
 | :-----: | :------------------ | :-----:     | :-----:             |
 | **H1**  | Stores with a larger assortment should sell more | False | Low |
@@ -92,7 +92,7 @@ The project steps were based on **CRISP-DM** metodology
 * although the dataset does not contain the full year 2015 data
 
 
-## Models Performance Comparation
+## 5. Models Performance Comparation
 
 The table below shows the comparation between the models performance after the cross validation technique.
 
@@ -108,7 +108,7 @@ Since the platform used for the deployment (Heroku) is free, it has space limita
 Another reason is that we expect that the model's performance increase after Hyperparameter Fine Tuning step.
 
 
-## Final Model Performance
+## 6. Final Model Performance
 
 As we expected, the model performance increased
 
@@ -117,7 +117,7 @@ As we expected, the model performance increased
 | XGBoost Regressor |	665.330873 |	0.097987 |	958.715745 |
 
 
-## Business Performance and Interpretation Error
+## 7. Business Performance and Interpretation Error
 
 The table below shows the sales forecast for some stores. The MAE indicates the average error of the model, in which we can predict the best-case and worst-case sales scenario. Along with this information, we have the MAPE that indicates the mean absolute of the error in percentage.
 
@@ -131,7 +131,7 @@ As an example, we can cite store 5, which has a forecast value of sales for the 
 |	4 |	349071.562500 |	348204.317436 |	349938.807564 |	867.245064 |	0.083969 |
 |	5 |	172722.390625 |	172373.571388 |	173071.209862 |	348.819237 |	0.080151 |
 
-### Graphical Analysis of Model Performance
+### 7.1 Graphical Analysis of Model Performance
 
 To help understand the performance of the model, we generate the graph below. In it, it is possible to verify that the sales brands follow the actual sales very closely (plot 1). Regarding the error rate (plot 2), we can see where the model is overestimating the sales value (above the dotted line), or underestimating the sales value (below the dotted line).
 Next, we have the error distribution, which approximates the normal (Gaussian) distribution, indicating that the error is symmetrically distributed around the mean (plot 3). Finally, we verified the low dispersion of the model's error (plot 4).
@@ -140,7 +140,7 @@ Next, we have the error distribution, which approximates the normal (Gaussian) d
 
 
 
-## Financial Results
+## 8. Financial Results
 
 Finally, we can calculate the sum of all predictions made by the model, identifying the best and worst scenarios for the next 6 weeks of sale.
 
@@ -151,7 +151,7 @@ Finally, we can calculate the sum of all predictions made by the model, identify
 |	best_scenario |	$ 287,668,215.25 |
 
 
-## Final product
+## 9. Final product
 
 As planned, the final product is an API for forecasting sales for the next 6 weeks, which can be accessed through the Telegram app.
 Below we have an image that illustrates the usage example of this application.
@@ -160,10 +160,10 @@ Below we have an image that illustrates the usage example of this application.
 ![image3](/img/telegram.jpeg)
 
 
-## Conclusion
+## 10. Conclusion
 We can conclude that the demand was met with the delivery of a solution that can be accessed anywhere, through the Telegram application that addresses the business problem raised by the CEO of the Rossmann company.
 
-## Next Steps
+## 11. Next Steps
 The next steps will be:
 - identification of improvements in model performance, either by adding new data or by adding new features to the model;
 - feedback from the business team on the usability of the application;
