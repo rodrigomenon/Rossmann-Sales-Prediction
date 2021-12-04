@@ -137,7 +137,7 @@ Next, we have the error distribution, which approximates the normal (Gaussian) d
 
 ## Financial Results
 
-Por fim, podemos calcular a soma do todas as previsões realizadas pelo modelo, identificando o melhor e pior cenário para as próximas 6 semanas de venda.
+Finally, we can calculate the sum of all predictions made by the model, identifying the best and worst scenarios for the next 6 weeks of sale.
 
 | scenario | values |
 | :----: | :----: |
