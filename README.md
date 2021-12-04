@@ -132,7 +132,7 @@ As an example, we can cite store 5, which has a forecast value of sales for the 
 To help understand the performance of the model, we generate the graph below. In it, it is possible to verify that the sales brands follow the actual sales very closely (plot 1). Regarding the error rate (plot 2), we can see where the model is overestimating the sales value (above the dotted line), or underestimating the sales value (below the dotted line).
 Next, we have the error distribution, which approximates the normal (Gaussian) distribution, indicating that the error is symmetrically distributed around the mean (plot 3). Finally, we verified the low dispersion of the model's error (plot 4).
 
-![image]('img/final_plot')
+![image]('/img/final_plot')
 
 
 ## Financial Results
@@ -152,7 +152,7 @@ As planned, the final product is an API for forecasting sales for the next 6 wee
 Below we have an image that illustrates the usage example of this application.
 
 
-![image]('img/telegram.jpeg')
+![image]('/img/telegram.jpeg')
 
 
 ## Conclusion
